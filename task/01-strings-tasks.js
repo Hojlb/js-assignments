@@ -1,4 +1,4 @@
-/**
+/*
 * 1)Returns the result of concatenation of two strings.
 *
 * @param {string value1
@@ -14,7 +14,7 @@
 function concatenateStrings(value1, value2) {
   return value1 + value2;
 
-  /**
+  /*
   * 2)Returns the length of given string.
   *
   * @param {string} value
@@ -29,7 +29,7 @@ function concatenateStrings(value1, value2) {
     return value.length();
   }
 
-  /**
+  /*
   * 3)Returns the result of string template and given parameters firstName and lastName.
   * Please do not use concatenation, use template string :
   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings
@@ -46,7 +46,7 @@ function concatenateStrings(value1, value2) {
     return `Hello, ${firstName} ${lastName}`;
   }
 
-  /**
+  /*
   * 4)Extracts a name from template string 'Hello, First_Name Last_Name!'.
   *
   * @param {string} value
@@ -61,7 +61,7 @@ function concatenateStrings(value1, value2) {
   }
 
 
-  /**
+  /*
   * 5) Returns a first char of the given string.
   *
   * @param {string} value
@@ -75,7 +75,7 @@ function concatenateStrings(value1, value2) {
     return value.split('')[0];
   }
 
-  /**
+  /*
   * 6)Removes a leading and trailing whitespace characters from string.
   *
   * @param {string} value
@@ -94,7 +94,7 @@ function concatenateStrings(value1, value2) {
    	}
   }
 
-  /**
+  /*
   * 7)Returns a string that repeated the specified number of times.
   *
   * @param {string} value
@@ -109,7 +109,7 @@ function concatenateStrings(value1, value2) {
     return new Array(++count).join(value);
   }
 
-  /**
+  /*
   * 8)Remove the first occurrence of string inside another string
   *
   * @param {string} str
@@ -127,7 +127,7 @@ function concatenateStrings(value1, value2) {
     return result.replace( '  ', ' ' );
   }
 
-  /**
+  /*
   * 9)Remove the first and last angle brackets from tag string
   *
   * @param {string} str
@@ -145,7 +145,7 @@ function concatenateStrings(value1, value2) {
   	}
   }
 
-  /**
+  /*
   * 10)Converts all characters of the specified string into the upper case
   *
   * @param {string} str
@@ -159,7 +159,7 @@ function concatenateStrings(value1, value2) {
     return str.toUpperCase();
   }
 
-  /**
+  /*
   * 11)Extracts e-mails from single string with e-mails list delimeted by semicolons
   *
   * @param {string} str
@@ -174,7 +174,7 @@ function concatenateStrings(value1, value2) {
     return str.split(';');
   }
 
-  /**
+  /*
   * 12)Returns the string representation of rectangle with specified width and height
   * using pseudograhic chars
   *
@@ -209,15 +209,15 @@ function concatenateStrings(value1, value2) {
       for( let j = 0; j < width; j++ ){
         if( j == 0 && i == 0 ) {
           result.push(ltCorner);
-        } else if( j != 0 && j != width - 1 && i == 0) {
+        } else if( j != 0 && j != width - 1 && i == 0 ) {
             result.push(hl);
         } else if( j == width - 1 && i == 0 ){
             result.push(rtCorner);
-        } else if( (j == 0 || j == width-1) && i != 0 && i != height-1  ) {
+        } else if( (j == 0 || j == width-1) && i != 0 && i != height-1 ) {
           result.push(vl);
         } else if( j == 0 && i == height-1 ) {
           result.push(lbCorner);
-        } else if( j != 0 && i == height-1 && j != width - 1) {
+        } else if( j != 0 && i == height-1 && j != width - 1 ){
             result.push(hl);
         } else if( j == width - 1 && i == height-1 ){
             result.push(rbCorner);
@@ -231,7 +231,7 @@ function concatenateStrings(value1, value2) {
     return result.join('');
   }
 
-  /**
+  /*
   * 13)Encode specified string with ROT13 cipher
   * See details:  https://en.wikipedia.org/wiki/ROT13
   *
@@ -252,11 +252,11 @@ function concatenateStrings(value1, value2) {
       let arr = str.split('');
       let result = [];
 
-      for(let i = 0, lngh = arr.length; i < lngh; i++ ){
+      for( let i = 0, lngh = arr.length; i < lngh; i++ ){
         let chr = arr[i].charCodeAt(0);
   	  if( chr >=65 && chr <= 90) {
           result.push( String.fromCharCode( 65 + chr % 26 )); // A[65]-Z[90]);
-        } else if(chr >=97 && chr <= 122){
+        } else if( chr >=97 && chr <= 122 ){
           result.push( String.fromCharCode( 97 + (chr-97+13) % 26)); // a[97]-z[122]
         } else {
           result.push(arr[i]);
@@ -266,7 +266,7 @@ function concatenateStrings(value1, value2) {
       return result.join('');
   }
 
-  /**
+  /*
   * 14)Returns true if the value is string; otherwise false.
   * @param {string} value
   * @return {boolean}
@@ -284,7 +284,7 @@ function concatenateStrings(value1, value2) {
   }
 
 
-  /**
+  /*
   * 15)Returns playid card id.
   *
   * Playing cards inittial deck inclides the cards in the following order:
@@ -315,7 +315,7 @@ function concatenateStrings(value1, value2) {
       'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
 
       return arr.indexOf(value);
-  }
+  };
 
   module.exports = {
     concatenateStrings: concatenateStrings,

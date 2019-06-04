@@ -1,16 +1,10 @@
-
-/** *******************************************************************************************
- *                                                                                           *
+/*
  * Plese read the following tutorial before implementing tasks:                              *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array    *
- *                                                                                           *
  * NOTE : Please do not use loops! All tasks can be implmeneted using standard Array methods *
- *                                                                                           *
- ******************************************************************************************** */
-
-
+*/
 /**
- * Returns an index of the specified element in array or -1 if element is not found
+ * 1)Returns an index of the specified element in array or -1 if element is not found
  *
  * @param {array} arr
  * @param {any} value
@@ -22,11 +16,11 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-  throw new Error('Not implemented');
+  return arr.indexOf(value);
 }
 
 /**
- * Generates an array of odd numbers of the specified length
+ * 2)Generates an array of odd numbers of the specified length
  *
  * @param {number} len
  * @return {array}
@@ -37,12 +31,16 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  throw new Error('Not implemented');
+  let arr = [];
+  for(let i = 0; i < len; i++) {
+    arr.push(2*i+1);
+  }
+  return arr;
 }
 
 
 /**
- * Returns the doubled array - elements of the specified array are repeated twice
+ * 3)Returns the doubled array - elements of the specified array are repeated twice
  * using original order
  *
  * @param {array} arr
@@ -54,12 +52,12 @@ function generateOdds(len) {
  *    [] => []
  */
 function doubleArray(arr) {
-  throw new Error('Not implemented');
+  return arr.concat(arr);
 }
 
 
 /**
- * Returns an array of positive numbers from the specified array in original order
+ * 4)Returns an array of positive numbers from the specified array in original order
  *
  * @param {array} arr
  * @return {array}
@@ -70,11 +68,13 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
-  throw new Error('Not implemented');
+  return arr.filter(function (number) {
+    return number > 0;
+  })
 }
 
 /**
- * Returns the array with strings only in the specified array (in original order)
+ * 5)Returns the array with strings only in the specified array (in original order)
  *
  * @param {array} arr
  * @return {array}
@@ -82,14 +82,16 @@ function getArrayOfPositives(arr) {
  * @example
  *    [ 0, 1, 'cat', 3, true, 'dog' ] => [ 'cat', 'dog' ]
  *    [ 1, 2, 3, 4, 5 ] => []
- *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
+ *    [ 'cat', 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-  throw new Error('Not implemented');
+  return arr.filter(function (str) {
+    return typeof(str) == 'string';
+  })
 }
 
 /**
- * Removes falsy values from the specified array
+ * 6)Removes falsy values from the specified array
  * Falsy values: false, null, 0, "", undefined, and NaN.
  * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description)
  *
@@ -102,11 +104,13 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  throw new Error('Not implemented');
+  return arr.filter(function (value) {
+    if(value) return true;
+  })
 }
 
 /**
- * Returns the array of useprcase strings from the specified array
+ * 7)Returns the array of useprcase strings from the specified array
  *
  * @param {array} arr
  * @return {array}
