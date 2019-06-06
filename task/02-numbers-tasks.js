@@ -52,7 +52,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2)/2;
+  return value1 / 2 + value2 / 2;
 }
 
 /**
@@ -88,13 +88,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  if( a === 0 ){
-    return -b;
-  } else if (b === 0) {
-    return 0;
-  } else {
-    return -b/a;
-  }
+  return  (a === 0) ? -b : ( (b === 0) ? 0 : -b/a );
 }
 
 /** !!!!!
@@ -116,15 +110,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  if (x1 > 1 || y1 > 1) {
-    x1 -=1; y1 -=1;
-  } else if (x2 > 1 || y2 > 1) {
-    x2 -=1; y2 -=1;
-  }
-  let ab = x1 * x2 + y1 * y2;
-  let abs_a = Math.sqrt(x1 ** 2 + y1 ** 2);
-  let abs_b = Math.sqrt(x2 ** 2 + y2 ** 2);
-  return Math.acos(ab/(abs_a * abs_b));
+  return Math.acos( (x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2)));
 }
 
 /**
@@ -140,8 +126,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  let n = value / 10;
-  return Math.ceil((n-Math.floor(n))*10);
+  return (value / 10 < 1) ? value : Math.round((value / 10 - Math.floor(value / 10))*10);
 }
 
 
@@ -195,13 +180,8 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  if( pow === 0 ) {
-    return num;
-  } else {
-    return Math.round(num/(10**pow))*(10**pow);
-  }
+  return (pow === 0 ) ? num : Math.round(num/(10**pow))*(10**pow);
 }
-
 /**
  * 11)Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
@@ -221,9 +201,10 @@ function roundToPowerOfTen(num, pow) {
  */
 function isPrime(n) {
   let result = true;
-  for(let i = 2; i<n; i++) {
-   if( n % i === 0 ) result = false;
-  }
+  if (n === 1) return false;
+  for( let i = 2; i < n; i++ ) {
+      if ( n % i === 0 ) result = false;
+    }
   return result;
 }
 

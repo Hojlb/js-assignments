@@ -13,7 +13,7 @@
 
 function concatenateStrings(value1, value2) {
   return value1 + value2;
-
+};
   /*
   * 2)Returns the length of given string.
   *
@@ -26,8 +26,8 @@ function concatenateStrings(value1, value2) {
   *   ''      => 0
   */
   function getStringLength(value) {
-    return value.length();
-  }
+    return value.length;
+  };
 
   /*
   * 3)Returns the result of string template and given parameters firstName and lastName.
@@ -43,7 +43,7 @@ function concatenateStrings(value1, value2) {
   *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
   */
   function getStringFromTemplate(firstName, lastName) {
-    return `Hello, ${firstName} ${lastName}`;
+    return `Hello, ${firstName} ${lastName}!`;
   }
 
   /*
@@ -87,11 +87,7 @@ function concatenateStrings(value1, value2) {
   *   '\tHello, World! ' => 'Hello, World!'
   */
   function removeLeadingAndTrailingWhitespaces(value) {
-    if(!value.match( /^\s/g ) || !value.match( /\s$/g)) {
-   		return value;
-   	} else {
-   		return value.split( /^\s+/g )[1].split( /\s+$/g )[0];
-   	}
+    return value.trim();
   }
 
   /*
@@ -122,9 +118,7 @@ function concatenateStrings(value1, value2) {
   *   'ABABAB','BA' => 'ABAB'
   */
   function removeFirstOccurrences(str, value)  {
-    let result = str.replace( value, '' );
-
-    return result.replace( '  ', ' ' );
+    return str.replace( value, '' ).replace( '  ', ' ' );
   }
 
   /*
@@ -139,10 +133,7 @@ function concatenateStrings(value1, value2) {
   *   '<a>' => 'a'
   */
   function unbracketTag(str) {
-    let arr = srt.split('');
-    if( arr[0] == '<' && arr[arr.length-1] == '>' ){
-  	   return arr.slice(1, arr.length-1).join('');
-  	}
+    return str.split('').slice(1, str.length-1).join('')
   }
 
   /*
@@ -309,10 +300,7 @@ function concatenateStrings(value1, value2) {
   *   'K♠' => 51
   */
   function getCardId(value) {
-    let arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
-      'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-      'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
-      'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+    let arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦','A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥','A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
 
       return arr.indexOf(value);
   };

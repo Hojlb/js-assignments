@@ -30,13 +30,9 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(len) {
-  let arr = [];
-  for(let i = 0; i < len; i++) {
-    arr.push(2*i+1);
-  }
-  return arr;
-}
+ function generateOdds(len) {
+   return [...Array(len)].map( (current, i) => { return 2 * i + 1; } );
+ }
 
 
 /**
@@ -68,9 +64,7 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
-  return arr.filter(function (number) {
-    return number > 0;
-  })
+  return arr.filter(function (number) { return number > 0; })
 }
 
 /**
@@ -85,9 +79,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat', 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-  return arr.filter(function (str) {
-    return typeof(str) == 'string';
-  })
+  return arr.filter(function (str) {return typeof(str) == 'string'; })
 }
 
 /**
@@ -104,9 +96,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  return arr.filter(function (value) {
-    if(value) return true;
-  })
+  return arr.filter(function (value) { if (value) return true; })
 }
 
 /**
