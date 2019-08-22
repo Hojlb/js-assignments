@@ -116,7 +116,7 @@ function getUpperCaseStrings(arr) {
 
 
 /**
- * Returns the array of string lengths from the specified string array.
+ * 8)Returns the array of string lengths from the specified string array.
  *
  * @param {array} arr
  * @return {array}
@@ -130,7 +130,7 @@ function getStringsLength(arr) {
 }
 
 /**
- * Inserts the item into specified array at specified index
+ * 9)Inserts the item into specified array at specified index
  *
  * @param {array} arr
  * @param {any} item
@@ -145,7 +145,7 @@ function insertItem(arr, item, index) {
 }
 
 /**
- * Returns the n first items of the specified array
+ * 10)Returns the n first items of the specified array
  *
  * @param {array} arr
  * @param {number} n
@@ -160,7 +160,7 @@ function getHead(arr, n) {
 
 
 /**
- * Returns the n last items of the specified array
+ * 11)Returns the n last items of the specified array
  *
  * @param {array} arr
  * @param {number} n
@@ -175,7 +175,7 @@ function getTail(arr, n) {
 
 
 /**
- * Returns CSV represebtation of two-dimentional numeric array.
+ * 12)Returns CSV represebtation of two-dimentional numeric array.
  * https://en.wikipedia.org/wiki/Comma-separated_values
  *
  * @param {array} arr
@@ -199,7 +199,7 @@ function toCsvText(arr) {
 }
 
 /**
- * Transforms the numeric array into the according array of squares:
+ * 13)Transforms the numeric array into the according array of squares:
  *   f(x) = x * x
  *
  * @param {array} arr
@@ -215,7 +215,7 @@ function toArrayOfSquares(arr) {
 
 
 /**
- * Transforms the numeric array to the according moving sum array:
+ * 14)Transforms the numeric array to the according moving sum array:
  *     f[n] = x[0] + x[1] + x[2] +...+ x[n]
  *  or f[n] = f[n-1] + x[n]
  *
@@ -229,11 +229,16 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-  throw new Error('Not implemented');
+  let result = [];
+  arr.reduce(function(res, item){
+    result.push(res + item);
+    return res + item;
+  }, 0);
+  return result;
 }
 
 /**
- * Returns every second item from the specified array:
+ * 15)Returns every second item from the specified array:
  *
  * @param {array} arr
  * @return {array}
@@ -244,12 +249,12 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  throw new Error('Not implemented');
+  return arr.filter((item,i)=>(i+1)%2===0);
 }
 
 
 /**
- * Propagates every item in sequence its position times
+ * 16)Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, tree third items etc.
  *
  * @param {array} arr
