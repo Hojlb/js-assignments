@@ -273,7 +273,7 @@ function propagateItemsByPositionIndex(arr) {
 
 
 /**
- * Returns the 3 largest numbers from the specified array
+ * 17)Returns the 3 largest numbers from the specified array
  *
  * @param {array} arr
  * @return {array}
@@ -286,12 +286,12 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  throw new Error('Not implemented');
+  return arr.sort((a,b)=>b-a).slice(0,3);
 }
 
 
 /**
- * Returns the number of positive numbers from specified array
+ * 18)Returns the number of positive numbers from specified array
  *
  * @param {array} arr
  * @return {number}
@@ -304,11 +304,11 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  throw new Error('Not implemented');
+  return arr.reduce((sum, item, i)=> (typeof(item)==="number" && item > 0) ? ++sum : sum,0);
 }
 
 /**
- * Sorts digit names
+ * 19)Sorts digit names
  *
  * @param {array} arr
  * @return {array}
@@ -325,7 +325,7 @@ function sortDigitNamesByNumericOrder(arr) {
 }
 
 /**
- * Returns the sum of all items in the specified array of numbers
+ * 20)Returns the sum of all items in the specified array of numbers
  *
  * @param {array} arr
  * @return {number}
@@ -337,11 +337,11 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-  throw new Error('Not implemented');
+  return arr.reduce((sum, item, i) => sum+item,0);
 }
 
 /**
- * Returns the number of all falsy value in the specified array
+ * 21)Returns the number of all falsy value in the specified array
  *
  * @param {array} arr
  * @return {array}
@@ -353,11 +353,11 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-  throw new Error('Not implemented');
+  return arr.reduce((sum, item, i)=> item ? sum : ++sum, 0);
 }
 
 /**
- * Returns a number of all occurences of the specified item in an array
+ * 22)Returns a number of all occurences of the specified item in an array
  *
  * @param {array} arr
  * @param {any} item
@@ -375,7 +375,7 @@ function findAllOccurences(arr, item) {
 }
 
 /**
- * Concatenates all elements from specified array into single string with ',' delimeter
+ * 23)Concatenates all elements from specified array into single string with ',' delimeter
  *
  * @param {array} arr
  * @return {string}
@@ -391,7 +391,7 @@ function toStringList(arr) {
 
 
 /**
- * Sorts the specified array by country name first and city name (if countries are
+ * 24)Sorts the specified array by country name first and city name (if countries are
  * equal) in ascending order.
  *
  * @param {array} arr
