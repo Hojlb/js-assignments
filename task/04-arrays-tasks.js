@@ -321,7 +321,8 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-  throw new Error('Not implemented');
+  let template = [ 'one','two','three','four','five','six','seven','eight','nine','ten' ];
+  return arr.sort((a, b) => template.indexOf(a) - template.indexOf(b));
 }
 
 /**
@@ -371,7 +372,7 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-  throw new Error('Not implemented');
+  return arr.filter((a)=> a === item).length;
 }
 
 /**
@@ -386,7 +387,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-  throw new Error('Not implemented');
+  return arr.join();
 }
 
 
@@ -416,11 +417,11 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-  throw new Error('Not implemented');
+     return arr.sort((a,b)=> a["country"] === b["country"] ? a["city"].localeCompare(b["city"]) : a["country"].localeCompare(b["country"]))
 }
 
 /**
- * Creates an indentity matrix of the specified size
+ * 25)Creates an indentity matrix of the specified size
  *
  * @param {number} n
  * @return {array}
@@ -442,7 +443,7 @@ function getIdentityMatrix(n) {
 }
 
 /**
- * Creates an array of integers from the specified start to end (inclusive)
+ * 26)Creates an array of integers from the specified start to end (inclusive)
  *
  * @param {number} start
  * @param {number} end
@@ -459,7 +460,7 @@ function getIntervalArray(start, end) {
 }
 
 /**
- * Returns array containing only unique values from the specified array.
+ * 27)Returns array containing only unique values from the specified array.
  *
  * @param {array} arr
  * @return {array}
@@ -470,11 +471,11 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-  throw new Error('Not implemented');
+  return arr.filter((item, i)=> arr.indexOf(item)==i);
 }
 
 /**
- * Groups elements of the specified array by key.
+ * 28)Groups elements of the specified array by key.
  * Returns multimap of keys extracted from array elements via keySelector callback
  * and values extracted via valueSelector callback.
  * See: https://en.wikipedia.org/wiki/Multimap
@@ -509,7 +510,7 @@ function group(array, keySelector, valueSelector) {
 
 
 /**
- * Projects each element of the specified array to a sequence and flattens the
+ * 29)Projects each element of the specified array to a sequence and flattens the
  * resulting sequences into one array.
  *
  * @param {array} arr
@@ -522,12 +523,12 @@ function group(array, keySelector, valueSelector) {
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
-  throw new Error('Not implemented');
+  return arr.join(childrenSelector).split(childrenSelector);
 }
 
 
 /**
- * Returns an element from the multidimentional array by the specified indexes.
+ * 30)Returns an element from the multidimentional array by the specified indexes.
  *
  * @param {array} arr
  * @param {array} indexes
@@ -544,7 +545,7 @@ function getElementByIndexes(arr, indexes) {
 
 
 /**
- * Swaps the head and tail of the specified array:
+ * 31)Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start.
  * The middle element (if exists) leave on the same position.
  *
